@@ -51,6 +51,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ./_site/${{ github.head_ref || github.ref_name }}
+          folder: /github-pages/_site/${{ github.head_ref || github.ref_name }}
           target-folder: "${{ github.head_ref || github.ref_name }}" # The folder the action should deploy to.
         
