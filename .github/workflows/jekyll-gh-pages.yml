@@ -48,6 +48,10 @@ jobs:
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
+      - name: check paths
+        run: |
+            echo "Checking paths"
+            ls -lR /home/runner/work/branched-docs-demo/branched-docs-demo
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
