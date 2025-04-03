@@ -35,20 +35,20 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./posts
-          destination: ./_site/${{ github.head_ref || github.ref_name }} 
+          destination: ./_site/${{ github.head_ref || github.ref_name }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./_site/${{ github.head_ref || github.ref_name }}
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}${{ github.head_ref || github.ref_name }} 
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./_site/${{ github.head_ref || github.ref_name }}
+          target-folder: "${{ github.head_ref || github.ref_name }}" # The folder the action should deploy to.
+        
