@@ -38,6 +38,8 @@ jobs:
           destination: ./_site/${{ github.head_ref || github.ref_name }} 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site/${{ github.head_ref || github.ref_name }}
 
   # Deployment job
   deploy:

@@ -1,3 +1,2 @@
 theme: jekyll-theme-cayman
 title: Branched Docs Demo
-baseurl: "/{{ GITHUB_REF | replace: '-', '/' }}"
