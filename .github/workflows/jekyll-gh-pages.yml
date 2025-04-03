@@ -26,6 +26,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,25 +38,9 @@ jobs:
         with:
           source: ./posts
           destination: ./_site/${{ github.head_ref || github.ref_name }}
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v4
-      - name: check paths
-        run: |
-            echo "Checking paths"
-            ls -lR /home/runner/work/branched-docs-demo/branched-docs-demo
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: /github-pages/${{ github.head_ref || github.ref_name }}
+          folder: ./_site/${{ github.head_ref || github.ref_name }}
           target-folder: "${{ github.head_ref || github.ref_name }}" # The folder the action should deploy to.
         
