@@ -48,8 +48,6 @@ jobs:
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
-        with:
-          name: ./_site/${{ github.head_ref || github.ref_name }}
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
