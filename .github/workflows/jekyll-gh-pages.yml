@@ -43,3 +43,4 @@ jobs:
         with:
           folder: ./_site/${{ github.head_ref || github.ref_name }}
           target-folder: "${{ github.head_ref || github.ref_name }}" # The folder the action should deploy to.
+        
