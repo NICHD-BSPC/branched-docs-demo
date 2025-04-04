@@ -36,6 +36,7 @@ jobs:
         if: (github.head_ref || github.ref_name) != 'main'
         run: |
           echo "baseurl: '/branched-docs-demo/${{ github.head_ref || github.ref_name }}'" >> ./_config.yml
+          cat ./_config.yml
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
