@@ -3,7 +3,7 @@ layout: default
 title: Baking Cookies | GitHub Pages Sample Site
 ---
 
-# Baking Cookies (Current)
+# Baking Cookies (Version 1)
 
 This is a sample post about baking cookies. It's a fun activity that's great for any time of year.
 
