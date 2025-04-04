@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Configure _config.yml
-        if: github.head_ref != 'main'
+        if: (github.head_ref || github.ref_name) != 'main'
         run: |
           echo "baseurl: '/branched-docs-demo/${{ github.head_ref || github.ref_name }}'" >> ./posts/_config.yml
       - name: Setup Pages
