@@ -5,6 +5,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches:
+    - main
     - site-v*
 
   # Allows you to run this workflow manually from the Actions tab
@@ -42,5 +43,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: ./_site/${{ github.head_ref || github.ref_name }}
-          target-folder: "${{ github.head_ref || github.ref_name }}" # The folder the action should deploy to.
-        
+          target-folder: ${{ (github.head_ref || github.ref_name) == 'main' && './' || (github.head_ref || github.ref_name) }}
+          clean-exclude: ${{ (github.head_ref || github.ref_name) == 'main' && 'site-v*' || '' }}
