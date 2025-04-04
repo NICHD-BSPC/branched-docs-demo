@@ -43,7 +43,9 @@ jobs:
         with:
           source: ./
           destination: ./_site/${{ github.head_ref || github.ref_name }}
-          exclude: [".github"]
+          exclude:
+            - ".github"
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
