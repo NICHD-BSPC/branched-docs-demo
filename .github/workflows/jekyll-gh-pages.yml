@@ -35,14 +35,16 @@ jobs:
       - name: Configure _config.yml
         if: (github.head_ref || github.ref_name) != 'main'
         run: |
-          echo "baseurl: '/branched-docs-demo/${{ github.head_ref || github.ref_name }}'" >> ./posts/_config.yml
+          echo -e "\nbaseurl: '/branched-docs-demo/${{ github.head_ref || github.ref_name }}'" >> ./_config.yml
+          cat ./_config.yml
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./posts
+          source: ./
           destination: ./_site/${{ github.head_ref || github.ref_name }}
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
