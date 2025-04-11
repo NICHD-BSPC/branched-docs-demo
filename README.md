@@ -10,6 +10,8 @@ To publish a branch to GitHub Pages, use the `site-v*` naming convention for you
 
 If you wish to use a different naming convention, replace all instances of the string `site-v*` within the `jekyll-gh-pages.yml` file with your desired branch pattern. The patterns should follow the glob-like expressions used by GitHub (see [docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#about-branch-protection-rules)).
 
+Make sure your changes are merged back to all branches that need to be deployed.
+
 ## GitHub Pages Configuration
 
 The `jekyll-gh-pages.yml` workflow runs on each branch that matches the naming convention and commits the resulting site assets (HTML, images, etc.) to a corresponding folder on the `gh-pages` branch. The GitHub Actions Pages configuration then handles the deployment of that branch to the GitHub Pages site.
