@@ -5,7 +5,7 @@ This repository demonstrates how to deploy different branches of a Jekyll site t
 ## Quick Start
 
 To enable in your repository:
-1. Copy the `.github` directory to the main branch of your repo.
+1. Copy the `.github` directory to the default branch (e.g. `main`) of your repo.
 2. Update the branch naming pattern, if desired (details below).
 3. Merge to all existing branches that you want to build as subfolders or create a new branch from the main branch.
 4. Enable GitHub Pages deployments from the `gh-pages` branch (details below).
@@ -16,7 +16,7 @@ To publish a branch to GitHub Pages, use the `site-v*` naming convention for you
 
 ### Editing the Branch Pattern in `jekyll-gh-pages.yml`
 
-If you wish to use a different naming convention, replace all instances of the string `site-v*` within the `jekyll-gh-pages.yml` file with your desired branch pattern. The patterns should follow the glob-like expressions used by GitHub (see [docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#about-branch-protection-rules)). If the default branch is not main, update that in the yaml file as well.
+If you wish to use a different naming convention, replace all instances of the string `site-v*` within the `jekyll-gh-pages.yml` file with your desired branch pattern. The patterns should follow the glob-like expressions used by GitHub (see [docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#about-branch-protection-rules)). If the default branch is not `main`, update that in the yaml file as well.
 
 Make sure your changes are merged back to all branches that need to be deployed.
 
