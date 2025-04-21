@@ -5,9 +5,9 @@ This repository demonstrates how to deploy different branches of a Jekyll site t
 ## Quick Start
 
 To enable in your repository:
-1. Copy the `.github` directory to the default branch (e.g. `main`) of your repo.
+1. Copy the `.github` directory to the default branch (e.g. `main`) of your repo. Once you have copied this file, this should initiate a GitHub action that will result in creation of a `gh-pages` branch. 
 2. Update the branch naming pattern, if desired (details below).
-3. Merge to all existing branches that you want to build as subfolders or create a new branch from the main branch.
+3. Merge to all existing branches that you want to build as subfolders or create a new branch from the main branch. Note that if you want to use a pre-existing branch, you will need to manually copy the same `.github` diretory to that branch.
 4. Enable GitHub Pages deployments from the `gh-pages` branch (details below).
 
 ## Branch Naming Convention
